@@ -29,23 +29,15 @@ class App extends React.Component {
 
   lengthHandler = (event) => {
     event.preventDefault();
-    if (isNaN(this.state.keylength) || this.state.keylength == "") {
+    if (isNaN(this.state.keylength) || this.state.keylength === "") {
       ReactDOM.render("Please enter a number.", document.getElementById('key-holder'));
     }
     else if (parseInt(this.state.keylength) <= 0 || parseInt(this.state.keylength) > 32) {
       ReactDOM.render("Key length should be between 1 and 32.", document.getElementById('key-holder'));
     }
     else {
-      this.state.secret = speakeasy.generateSecret({ length: parseInt(this.state.keylength) });
+      this.state.secret = speakeasy.generateSecret({ length: parseInt(this.state.keylength) }) ;
       ReactDOM.render(this.state.secret.base32, document.getElementById('key-holder'));
-
-      console.log(this.state.secret)
-      console.log({
-        "token": speakeasy.totp({
-          secret: this.state.secret.ascii,
-          encoding: "ascii"
-        })
-      })
     }
   }
 

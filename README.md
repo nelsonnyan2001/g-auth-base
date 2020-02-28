@@ -1,5 +1,7 @@
 # g-auth-base
-Barebones google authenticator implementation with ReactJS and speakeasy
+Barebones google authenticator implementation with ReactJS and speakeasy.
+
+This site can be accessed online at [auth.zwenyantoe.me](auth.zwenyantoe.me)
 
 This site is built entirely on client-side javascript with ReactJS and a Javascript Library called speakeasy.
 
