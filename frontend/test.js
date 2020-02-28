@@ -15,3 +15,5 @@ console.log(speakeasy.totp.verify({
     }),
     window: 0
 }))
+
+console.log('@2<7&at(hG[$@MeN]*siQbw#D.%QI#g7Si8ykw22'.length)
