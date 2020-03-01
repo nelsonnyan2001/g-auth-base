@@ -6,6 +6,7 @@
   background-color: #282c34;
   justify-content: center;
   text-align: center;
+  overflow: auto;
 }
 
 .App-header {
@@ -66,9 +67,19 @@
 }
 
 .key-holder{
-  font-size: 40px;
+  overflow: hidden;
+  margin-left: 20px;
+  margin-right: 20px;
+
+  font-size: 2vw;
   background-color: black;
   padding: 10px;
   border-radius: 5px;
   color: white;
+}
+
+@media screen and (max-width: 768px){
+  .key-holder{
+    font-size: 2.5vw;
+  }
 }

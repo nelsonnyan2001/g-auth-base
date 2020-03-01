@@ -36,8 +36,9 @@ class App extends React.Component {
       ReactDOM.render("Key length should be between 1 and 32.", document.getElementById('key-holder'));
     }
     else {
-      this.state.secret = speakeasy.generateSecret({ length: parseInt(this.state.keylength) }) ;
-      ReactDOM.render(this.state.secret.base32, document.getElementById('key-holder'));
+      let generated_secret = speakeasy.generateSecret({ length: parseInt(this.state.keylength) });
+      this.setState({ secret: generated_secret })
+      ReactDOM.render(generated_secret.base32, document.getElementById('key-holder'));
     }
   }
 
@@ -65,13 +66,13 @@ class App extends React.Component {
       <div className="App">
         <header className="App-header">
           Simple Google Authenticator App
-      <p className="general-text">
+          <p className="general-text">
             Zwe Nyan Toe
-      </p>
+          </p>
         </header>
         <div className="length-request-holder">
           <div className="form-holder">
-            <p className="general-text">Enter the desired length of your secret key.</p>
+            <p className="general-text">Enter the ASCII length of your secret key.</p>
             <form
               id="secret-length-form"
               className="secret-form"
