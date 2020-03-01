@@ -44,10 +44,10 @@ class App extends React.Component {
 
   otpInputHandler = (event) => {
     event.preventDefault();
-    if (this.state.secret == '') {
+    if (this.state.secret === '') {
       ReactDOM.render("Please generate a secret key first.", document.getElementById('validation'));
     }
-    else if (isNaN(this.state.otpInput) || this.state.otpInput == "" || this.state.otpInput.length != 6) {
+    else if (isNaN(this.state.otpInput) || this.state.otpInput === "" || this.state.otpInput.length !== 6) {
       ReactDOM.render("Please enter a six-digit number.", document.getElementById('validation'));
     }
     else if (parseInt(speakeasy.totp({
